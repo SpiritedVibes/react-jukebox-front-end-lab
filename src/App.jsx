@@ -1,5 +1,16 @@
-const App = () => {
-  return <h1>Hello world!</h1>;
-};
+import React from "react"
+import { Routes, Route } from "react-router-dom"
+import Home from "./components/Home"
+import TrackForm from "./components/TrackForm"
 
-export default App;
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/add-track" element={<TrackForm />} />
+      <Route path="/edit-track/:trackId" element={<TrackForm />} />
+    </Routes>
+  )
+}
+
+export default App
